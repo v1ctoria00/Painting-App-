@@ -8,7 +8,7 @@ color lightYell = #ffde82;
 color midYell   = #f5cc5b;
 color darkYell  = #ffc219;
 //
-color selectedColor;
+color selectedColor= #ffc219;
 
 void setup() {
   size(800, 600);
@@ -21,7 +21,7 @@ void draw() {
   
   //rect (is changing color)
   fill(selectedColor);
-  rect(150, 100, 500, 150, 10);
+  rect(150, 100, 500, 200, 10);
   
   //circle (buttons)
   fill(lightYell);
