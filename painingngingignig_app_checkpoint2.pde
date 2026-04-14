@@ -11,40 +11,45 @@ color darkpink  = #b33b6d;
 color selectedColor;
 
 void setup() {
-  size(800, 600);
+  size(600, 600);
   background(back);
   strokeWeight(6);
   stroke(strk); 
+  selected  colour = base;
 }
 
 void draw() {
-  
-  //rect (is changing color)
-  fill(selectedColor);
-  rect(150, 100, 500, 200, 10);
-  
-  //sqaqaqaqqaqqqaqaaq (buttons)
-  fill(lightpink);
-  rect(150, 400, 120, 120);
-  
-  fill(midpink);
-  circle(400, 400, 120);
-  
-  fill(darkpink);
-  circle(650, 400, 120);
+  fill(selectedColour);
+stroke(0);
+rect(100, 50, 400, 300);
+
+select(50, 450, lightpink);
+
+select(250, 450, midpink);
+
+select(450, 450, green);
 }
-  
+
+void select(int x, int y, color c) {
+if(mouseX > x && mouseX < x + 100 && mouseY > y && mouseY < y + 100); {
+  stroke(255);
+} else {
+stroke(0);
+} 
+fill(c);
+square(x, y, 100);
+}
+
 void mouseReleased() {
-  //lightpink button 
-  if (dist(150, 400, mouseX, mouseY) < 50) {
-    selectedColor = lightpink;
-  }
-  //midpink button 
-  if (dist(400, 400, mouseX, mouseY) < 50) {
-    selectedColor = midpink;
-  }
-  //darkyellow button
-  if (dist(650, 400, mouseX, mouseY) < 50) {
-    selectedColor = darkYell;
+  if(mouseX > 50 && mouseX < 150 && mouseY > 450 && mouseY < 550){
+selectedColour = lightpink;
+}
+
+if (mouseX > 250 && mouseX < 350 && mouseY > 450 && mouseY < 550){
+selectedColour = midpink;
+}
+
+if (mouseX > 450 && mouseX < 550 && mouseY > 450 && mouseY < 550) {
+selectedColour = darkpink;
   }
 }
