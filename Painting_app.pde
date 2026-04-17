@@ -18,6 +18,7 @@ color VintagePink = #C65C69;
 color White = #FFFFFF;
 color SLIDEPINK = #f2b3c6;
 color OUTLINE = #f7cdd4;
+color SELECTOUTLINE = #fae3ed;
 
 color selectedColor;
 PImage kitty;
@@ -44,55 +45,55 @@ void setup() {
 }
 
 void draw() {
-  buttons(x, y); 
+  buttons(); 
   slider(x, y);
-  
+}  
 ////////////////////////////////////////
   //stamp
-  tactile(10, 480, 80, 110);
-  strokeWeight(1);
-  image(kitty, 10, 480, 80, 110);
-}
+//  tactile(10, 480, 80, 110);
+//  strokeWeight(1);
+//  image(kitty, 10, 480, 80, 110);
+//}
 
-void kittyOnOff() {
-  if(kittyOn == true) {
-    stroke(255, 0, 0);
-    strokeWeight(5);
-  } else {
+//void kittyOnOff() {
+//  if(kittyOn == true) {
+//    stroke(255, 0, 0);
+//    strokeWeight(5);
+// } else {
     
-  }
+//  }
   
 ////////////////////////////////////////
-void buttons(int x, int y) {//float r, color c) {
+void buttons() {
 
   fill(selectedColor);
   stroke(OUTLINE);
   strokeWeight(2);
   
-  fill(PaleBlush);
-  circle(27, 50, 35);
-  //select(27, 50, PaleBlush);
+  //fill(PaleBlush);
+  //circle(27, 50, 35);
+  select(27, 50, PaleBlush);
   
-  fill(LightRose);
-  circle(70, 50, 35);
+  //fill(LightRose);
+  select(70, 50, LightRose);
   
-  fill(SoftCoralPink);
-  circle(27, 90, 35);
+  //fill(SoftCoralPink);
+  select(27, 90, SoftCoralPink);
   
-  fill(WarmPink);
-  circle(70, 90, 35);
+  //fill(WarmPink);
+  select(70, 90, WarmPink);
   
-  fill(MutedRaspberry);
-  circle(27, 130, 35);
+  //fill(MutedRaspberry);
+  select(27, 130, MutedRaspberry);
   
-  fill(AntiqueRose);
-  circle(70, 130, 35);
+  //fill(AntiqueRose);
+  select(70, 130, AntiqueRose);
   
-  fill(VintagePink);
-  circle(27, 170, 35);
+  //fill(VintagePink);
+  select(27, 170, VintagePink);
   
-  fill(White);
-  circle(70, 170, 35);
+  //fill(White);
+  select(70, 170, White);
 } 
 
 ////////////////////////////////////////
@@ -113,9 +114,22 @@ void mouseDragged() {
   
   //line(pmouseX, pmouseY, mouseX, mouseY);
   }
+  
+void select(int x, int y, color c) {
+  if(mouseX > x && mouseX < x + 100 && mouseY > y && mouseY < y + 100) {
+    stroke(SELECTOUTLINE);
+  } else {
+    stroke(OUTLINE);
+  }
+    fill(c);
+    circle(x, y, 35);
+}
 ////////////////////////////////////////
 void mouseReleased() {
   controlSlider();
+  
+  //buttons
+  //if(mouseX >
 }
 ////////////////////////////////////////
 void controlSlider() {
@@ -125,14 +139,14 @@ void controlSlider() {
   r = map(sliderY, 220, 330, 0, 10);
 }
 ////////////////////////////////////////
-if (stamp1 == true) {
-  image(kitty, mouseX, mouseY);
-} else if (stamp2 == true) {
-  image(bow, mouseX, mouseY);
-} else {
-  strokeWeight(thickness);
-  line(pmouseX, pmouseY, mouseX, mouseY);
-}
+//if (stamp1 == true) {
+//  image(kitty, mouseX, mouseY);
+//} else if (stamp2 == true) {
+//  image(bow, mouseX, mouseY);
+//} else {
+//  strokeWeight(thickness);
+//  line(pmouseX, pmouseY, mouseX, mouseY);
+//}
 
  
 
