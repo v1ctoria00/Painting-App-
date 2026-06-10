@@ -266,7 +266,7 @@ void loadButton(int x, int y) {
 
 void saveImage(File f) {
   if (f != null) {
-    PImage canvas = get(100, 0, 700, 600);
+    PImage canvas = get(200, 0, width-200, height);
     canvas.save(f.getAbsolutePath());
   }
 }//save image function----------------
@@ -276,7 +276,7 @@ void openImage (File f) {
     int n =0;
     while (n < 10) {
       PImage pic = loadImage(f.getPath());
-      image(pic, 100, 0);
+      image(pic, 100, 0, width-100, height);
       n = n+1;
     }
   }
